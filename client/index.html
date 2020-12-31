@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <body>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+        <!-- Load TensorFlow.js. This is required to use MobileNet. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.7"> </script>
+    <!-- Load the MobileNet model. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@0.1.1"> </script>
+  <div class = "navbar">
+    <span class='title' style="font-family: Arial, Helvetica, sans-serif;">Space vs Ocean</span>
+    <div class='scores' style="font-family: Arial, Helvetica, sans-serif;">
+      <div class="space-points" style="font-size:20px;margin-left:40%;">
+      </div>
+      <span style="font-size:20px;"> to </span>
+      <div class="ocean-points" style="font-size:20px;margin-right:40%;">
+    </div>
+    </div>
+          <div class="flex-parent-row" style="justify-content:space-between;font-family: Arial, Helvetica, sans-serif;">
+            <span class='username'></span>
+            <span class="timer hidden" style="color:gray;">Waiting for Opponent...</span>
+            <button id="menu-button-2" class="hidden" style="margin-top:1%;margin-left:-15%;margin-right:15%">Menu</button>
+          </div>
+  </div>
+<!-- play menu
+ --> 
+ <div id="play-menu">
+	    <input type="text" id="username-input" placeholder="Username" />
+      <div class="flex-parent-row">
+        <button id="play-button" style="margin-right:5px;padding:5px">Play</button>
+        <button id="spectate-button">Spectate</button>
+      </div>
+	 </div>
+<!--   spectate in wrapper
+  
+ -->  
+  <div class="spectate-container hidden">
+        <button id="menu-button">Menu</button>
+        <div id="wrapper">
+    </div>
+  </div>
+<!-- game in flex-parent-row
+ --> <div class="flex-parent-row hidden">
+  	<div class="flex-parent-column">
+	  	<div class="flex-child inventory">
+	  	</div>
+	  	<div class="flex-child special-box">
+	  	</div>
+  	</div>
+  	<div class="flex-child grid-container">
+  	</div>
+    <span style="width:30%;margin-left:1%;font-size:1.5em;font-family: Arial, Helvetica, sans-serif;"><br /> <br /> Click on an image in the image bank and then enter a number for where you want the image to go in the grid. <br /> <br /> Click on an image in the specials bank to manipulate the grid. <br /> <br /> After 9 turns, the winner will be determined by whether the grid looks more like space or an ocean.</span>
+  </div>
+</body>
+</html>
